@@ -1,0 +1,10 @@
+Drop a PNG file named "genie.png" in this folder (this assets/ directory).
+
+Recommended: 512x512, transparent background, mouth visible in lower-center.
+
+If you don't add one, a purple placeholder circle will be used.
+
+Some quick options:
+- Generate one with DALL-E / Midjourney: "cartoon genie character, transparent background, 512x512, mouth visible, blue smoke"
+- Use a free PNG from openclipart.org
+- Even a celebrity headshot will work for testing

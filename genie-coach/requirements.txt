@@ -1,0 +1,38 @@
+# Core
+python-dotenv>=1.0.0
+pyyaml>=6.0
+numpy>=1.24.0
+asyncio-throttle>=1.0.2
+
+# Capture
+mss>=9.0.1                    # screen capture
+sounddevice>=0.4.6            # mic capture
+soundfile>=0.12.1
+opencv-python>=4.8.0
+ffmpeg-python>=0.2.0
+
+# Voice activity detection
+silero-vad>=5.0.0
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Speech-to-text (local)
+faster-whisper>=1.0.0
+
+# LLM (vision)
+google-generativeai>=0.8.0
+
+# Text-to-speech
+elevenlabs>=1.0.0
+pydub>=0.25.1
+
+# Avatar overlay
+PyQt6>=6.6.0
+pillow>=10.0.0
+
+# Audio playback
+pyaudio>=0.2.13
+
+# Utilities
+loguru>=0.7.0
+aiofiles>=23.0.0

@@ -1,0 +1,53 @@
+capture:
+  # Clip duration analyzed each cycle (seconds)
+  clip_duration: 30
+  # How often to run analysis (seconds)
+  interval: 25
+  # Screen capture resolution (downscaled before sending to Gemini to save bandwidth/cost)
+  video_width: 1280
+  video_height: 720
+  fps: 4              # 4fps is plenty for VLM analysis, keeps payload small
+  # Which monitor to capture (1-indexed; 0 = all monitors)
+  monitor: 1
+
+audio:
+  sample_rate: 16000
+  channels: 1
+  # Set to null to use default input device, or an integer index from `python -m sounddevice`
+  input_device_index: null
+
+trigger:
+  # "time" = fire every interval seconds
+  # "voice" = fire only when you've spoken in the buffer
+  # "hybrid" = time-based, but skips if no game audio activity
+  mode: "hybrid"
+  voice_min_duration_sec: 1.0
+
+llm:
+  model: "gemini-2.0-flash-exp"
+  max_response_tokens: 60
+  temperature: 0.9
+  persona_file: "config/persona.txt"
+
+stt:
+  # faster-whisper model: tiny, base, small, medium, large-v3
+  # "base" is the sweet spot for speed vs accuracy on English mic input
+  model: "base"
+  device: "cuda"     # "cuda" or "cpu"
+  compute_type: "float16"
+  language: "en"
+
+tts:
+  # "elevenlabs" or "kokoro" (local, requires extra setup)
+  provider: "elevenlabs"
+  model: "eleven_flash_v2_5"
+  stability: 0.5
+  similarity_boost: 0.75
+
+avatar:
+  image_path: "assets/genie.png"
+  # Position on screen: "top-left", "top-right", "bottom-left", "bottom-right"
+  position: "top-right"
+  size: 280
+  # Lip sync method: "amplitude" (fast, basic) or "wav2lip" (slow, realistic)
+  lipsync_method: "amplitude"
